@@ -1,0 +1,28 @@
+package com.looppr;
+
+import java.util.*;
+public class PalindromeNo {
+	public static void main(String[] args)
+	{
+		Scanner sc=new Scanner(System.in);
+		 System.out.println("Enter a number: ");
+		 int n=sc.nextInt();
+		 
+		 palindrome(rev);
+	}
+	public static void palindrome(int n)
+	{
+		int r,rev=0;
+		while(n>0)
+		{
+			r=n%10;
+			rev=rev*10+r;
+			n=n/10;
+		}
+		if(rev==n)
+			System.out.println("Number is palindrome "+rev);
+		else
+			System.out.println("Number is not palindrome "+rev);
+	}
+
+}

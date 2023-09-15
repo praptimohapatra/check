@@ -1,0 +1,30 @@
+package com.hw;
+
+public class RangePrime {
+	static int i=2;
+	static int n=1;
+	public static void main(String[] args) {
+       System.out.println(primeCheck(30));
+
+	}
+	public static boolean primeCheck(int range)
+	{
+		if(n<range)
+		{
+		if(i==n/2)
+		   return true;
+		
+	   if(n%i==0)
+		   return false;
+		}
+	   i++;
+	   return primeCheck(n);
+		
+
+	
+	  
+	}
+
+
+
+}

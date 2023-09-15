@@ -1,0 +1,44 @@
+package com.jspyders.learningPST;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Scanner;
+
+public class UserRespiratory {
+	Connection con=null;
+	ResultSet rst=null;
+	PreparedStatement pst=null;
+	static Scanner sc=new Scanner(System.in);
+	UserRespiratory()
+	{
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/first_sql","root","08robotic@93");
+			
+		} catch (SQLException | ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	
+	}
+	public void insert_data() throws SQLException
+	{
+		while(true)
+		{
+			pst = con.prepareStatement("insert into user(id,name,email,pwd,mobile) values(? ,?,?,?,?)");
+			pst.setInt(1, 201);
+		    pst.setString(2, "Deep");
+	        pst.setString(3,"Deep@gmail.com");
+	        pst.setString(4, "de@123");
+	        pst.setLong(5, 998562347);
+	            
+	            pst.executeUpdate();
+	            System.out.println("inserted");
+	            
+		}
+	}
+
+}

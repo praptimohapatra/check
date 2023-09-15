@@ -1,0 +1,67 @@
+package com.jspyders.learningPST;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Scanner;
+
+public class UserRespiratory {
+	Connection con=null;
+	ResultSet rst=null;
+	PreparedStatement pst=null;
+	static Scanner sc=new Scanner(System.in);
+	UserRespiratory()
+	{
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/first_sql","root","08robotic@93");
+			
+		} catch (SQLException | ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	
+	}
+	public void insert_data() throws SQLException
+	{
+		System.out.println("Enter id,name,email,pwd,mobile");
+		int id=sc.nextInt();
+		String ename=sc.next();
+		String mail=sc.next();
+		double sal=sc.nextDouble();
+		int age=sc.nextInt();
+		while(true)
+		{
+			pst = con.prepareStatement("insert into user1(id,ename,mail,sal,age) values(? ,?,?,?,?)");
+			pst.setInt(1, id);
+		    pst.setString(2, ename);
+	        pst.setString(3,mail);
+	        pst.setDouble(4, sal);
+	        pst.setInt(5, age);
+	            
+	            pst.executeUpdate();
+	            System.out.println("inserted");
+	            
+		}
+	}
+	public void update_data() throws SQLException
+	{
+		System.out.println("Update id,ename,mail,sal,age");
+		int id=sc.nextInt();
+		String name=sc.next();
+		String mail=sc.next();
+		double sal=sc.nextDouble();
+		int age=sc.nextInt();
+		while(true)
+		{
+			pst =con.prepareStatement("update items set ename=?, mail=?, sal=?, age=? where id=?");
+			
+			pst.setString(1,);
+		}
+
+	}
+	
+
+}

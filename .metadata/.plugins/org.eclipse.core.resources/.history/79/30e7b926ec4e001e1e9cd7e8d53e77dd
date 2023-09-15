@@ -1,0 +1,32 @@
+package com.jspyders.learningPST;
+
+import java.sql.SQLException;
+import java.util.Scanner;
+
+public class UserDriver {
+	public static void main(String[] args) throws SQLException {
+		Scanner sc = new Scanner(System.in);
+		UserRespiratory ur=new UserRespiratory();
+		System.out.println("----------------------WELCOME-----------------------");
+		System.out.println("press 1 for insert");
+		System.out.println("press 2 for update");
+		System.out.println("press 3 for delete");
+		System.out.println("press 4 for display");
+		
+		int choice =sc.nextInt();
+		switch(choice)
+		{
+		case 1: ur.insert_data();
+		            break;
+		//case 2: ur.update_data();
+		 //          break;
+		//case 3: ur.delete_data();
+         //          break;
+        //case 4: ur.display_data();
+         //          break;
+        default:
+        	System.out.println("exit");
+		}
+	}
+
+}

@@ -1,0 +1,35 @@
+package com.looppr;
+
+import java.util.*;
+public class CountEvenOdd {
+	public static void main(String[] args)
+	{
+	Scanner sc=new Scanner(System.in);
+	 System.out.println("Enter a number: ");
+	 int n=sc.nextInt();
+	
+	 countevod(n);
+	}
+    public static void countevod(int n)
+    {
+    	int rem,c=0;
+    	while(n!=0)
+    	{
+    		rem=n%10;
+    		if(n%2==0)
+    		{
+    			c++;
+    			System.out.println("Even numbers are "+rem);
+    		}
+    		else
+    		{
+    			c++;
+    			System.out.println("Odd numbers are "+rem);
+    		}
+    		n=n/10;
+    	}
+    	//System.out.println("Even numbers are "+c);
+    	//System.out.println("Odd numbers are "+c);
+    	
+    }
+}

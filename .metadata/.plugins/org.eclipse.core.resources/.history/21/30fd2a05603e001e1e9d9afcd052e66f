@@ -1,0 +1,32 @@
+package com.hw;
+
+public class RangePrime {
+	static int count=0;
+    static int i=1;    
+	public static void main(String[] args) {
+
+       primeCheck(5,10);
+       if(count==2)
+    	   System.out.println("Prime number are: "+count);
+
+	}
+	public static void primeCheck(int n,int range)
+	{
+	  
+	   if(n<=range)
+	   {
+		if(i<=n)
+		{
+			if(n%i==0)
+			{
+				count++;
+			}
+			i++;
+			primeCheck(n,i);
+		}
+		n++;
+		
+	   }
+	}
+
+}

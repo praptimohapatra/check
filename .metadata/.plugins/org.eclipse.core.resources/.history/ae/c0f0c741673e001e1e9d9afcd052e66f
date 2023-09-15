@@ -1,0 +1,40 @@
+package com.hw;
+
+public class RangePrime {
+	
+    static int i=1;    
+	public static void main(String[] args) {
+     
+      pC(5,10);
+      
+	}
+	public static int primeCheck(int n,int i)
+	{
+	  int count=0;
+		if(i<=n)
+		{
+			if(n%i==0)
+			{
+				count++;
+			}
+			i++;
+			primeCheck(n,i);
+		}
+		if(count==2)
+	    	 System.out.println("primeno"+n);
+		return n;
+	      
+        
+	}
+	public static void pC(int n,int b)
+	{
+		//System.out.println("the primenumbers are:"+n);
+		while(n<=b)
+		{
+			System.out.println(primeCheck(n,i));
+			n++;
+		}
+	}
+
+
+}
